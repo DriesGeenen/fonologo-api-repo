@@ -15,7 +15,7 @@ const jsonwebtoken = require("jsonwebtoken");
 require('./config/passport')(passport);
 
 //Port number
-const port = 6600;
+const port = 8080;
 
 mongoose.connect(config.database);
 
