@@ -16,6 +16,8 @@ require('./config/passport')(passport);
 
 //Port number
 const port = 8080;
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 mongoose.connect(config.database);
 
@@ -60,7 +62,7 @@ router.get('/', function (req, res) {
 });
 
 //start server
-app.listen(port, function () {
+app.listen(server_port,server_ip_address, function () {
     console.log('Server started on port ' + port);
 });
 
