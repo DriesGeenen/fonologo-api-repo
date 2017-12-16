@@ -1,4 +1,4 @@
 module.exports={
-    database: 'mongodb://admin:adminwachtwoordisgeheim@localhost:27017/project-td',
+    database: 'mongodb://admin:adminwachtwoordisgeheim@172.30.181.199:27017/mongodb',
     secret:'notpublic'
 };
