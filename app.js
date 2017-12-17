@@ -17,10 +17,10 @@ require('./config/passport')(passport);
 //Port number
 const port = 6600;
 
-mongoose.connect(config.databaseString());
+mongoose.connect(config.databaseString);
 
 mongoose.connection.on('connected', function () {
-    console.log('Connected to database' + config.databaseString());
+    console.log('Connected to database' + config.databaseString);
 });
 
 mongoose.connection.on('error', function (err) {
