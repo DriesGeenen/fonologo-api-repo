@@ -20,7 +20,12 @@ console.log(config.databaseString);
 var ip_addr = process.env.OPENSHIFT_NODEJS_IP   || '127.0.0.1';
 var port    = process.env.OPENSHIFT_NODEJS_PORT || '8080';
 
-mongoose.connect(config.databaseString);
+console.log(process.env.OPENSHIFT_MONGODB_DB_USERNAME);
+console.log(process.env.OPENSHIFT_MONGODB_DB_PASSWORD);
+console.log(process.env.OPENSHIFT_MONGODB_DB_USERNAME);
+console.log(process.env.OPENSHIFT_MONGODB_DB_PORT);
+console.log(process.env.OPENSHIFT_APP_NAME);
+
 
 mongoose.connection.on('connected', function () {
     console.log('Connected to database' + config.databaseString);
