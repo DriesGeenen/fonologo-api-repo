@@ -15,7 +15,8 @@ const jsonwebtoken = require("jsonwebtoken");
 require('./config/passport')(passport);
 
 //Port number
-const port = 6600;
+var ip_addr = process.env.OPENSHIFT_NODEJS_IP   || '127.0.0.1';
+var port    = process.env.OPENSHIFT_NODEJS_PORT || '8080';
 
 mongoose.connect(config.databaseString);
 
