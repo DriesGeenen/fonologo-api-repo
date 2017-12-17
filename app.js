@@ -14,7 +14,6 @@ const roomRoutes = require('./routes/resultRoutes');
 const jsonwebtoken = require("jsonwebtoken");
 require('./config/passport')(passport);
 
-console.log(util.inspect(process.env)); 
 console.log(config.databaseString);
 
 //Port number
