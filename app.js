@@ -15,14 +15,12 @@ const jsonwebtoken = require("jsonwebtoken");
 require('./config/passport')(passport);
 
 //Port number
-const port = 8080;
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+const port = 6600;
 
-mongoose.connect(config.database);
+mongoose.connect(config.databaseString());
 
 mongoose.connection.on('connected', function () {
-    console.log('Connected to database' + config.database);
+    console.log('Connected to database' + config.databaseString());
 });
 
 mongoose.connection.on('error', function (err) {
@@ -62,7 +60,7 @@ router.get('/', function (req, res) {
 });
 
 //start server
-app.listen(server_port,server_ip_address, function () {
+app.listen(port, function () {
     console.log('Server started on port ' + port);
 });
 
