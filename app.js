@@ -14,7 +14,8 @@ const roomRoutes = require('./routes/resultRoutes');
 const jsonwebtoken = require("jsonwebtoken");
 require('./config/passport')(passport);
 
-console.log(util.inspect(process.env)) 
+console.log(util.inspect(process.env)); 
+console.log(config.databaseString);
 
 //Port number
 var ip_addr = process.env.OPENSHIFT_NODEJS_IP   || '127.0.0.1';
