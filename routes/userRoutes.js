@@ -15,7 +15,7 @@ module.exports = function (app) {
         .delete(AuthHelper.logoRequired, UserController.deleteUser);
 
     app.route('/users/register')
-        .post(/*AuthHelper.logoRequired*/, UserController.registerUser);
+        .post(UserController.registerUser);
 
     app.route('/users/authenticate')
         .post(UserController.authenticateUser);
